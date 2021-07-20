@@ -1,0 +1,34 @@
+server:
+  port: 8086   # 记得修改，不要重复咯
+#web3j:
+#  client-address: http://192.168.99.100:8545
+spring:
+  jmx:
+    enabled: false
+    default-domain: com.application.name
+    unique-names: true
+  datasource:
+#    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://192.168.229.130:3306/geth?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+    hikari:
+      maximum-pool-size: 9
+      max-lifetime: 28830000
+      pool-name: DatebookHikariCP
+mylog:
+  flog: 1,2,3  #自定义日志输出","号隔开，只有0时不输出日志，有1时输出传入参数，有2时输出逻辑处理中的日志，有3时输出返回值日志。含有100输出所有
+  serverName: admin # 可不写，用于多项目日志区分
+qiuxingka:
+  wechat:
+    appid: 0
+    secret: 0
+    accessToken: 100 # 分钟
+  jwt:
+    secret: wanliu@Login(Auth}*^31)&wanliu% # 登录校验的密钥
+    expire: 30 # 过期时间,单位分钟
+    cookieName: CY_TOKEN
+    pubKeyPath: D:\1\pass\\rsa.pub # 公钥地址
+    priKeyPath: D:\1\pass\\rsa.pri # 私钥地址
+#    pubKeyPath: /opt/RSA/rsa.pub # 公钥地址
+#    priKeyPath: /opt/RSA/rsa.pri # 私钥地址
